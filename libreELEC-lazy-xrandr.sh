@@ -6,7 +6,10 @@ export DISPLAY=':0.0'
 
 # if a screen is already connected, just exit.
 xrandr -q | grep -q '\.[0-9]\+\*'
-[[ $? = 0 ]] && exit 0
+if [[ $? = 0 ]]; then
+    echo "$(date) screen already connected, exiting..."
+    exit 0
+fi
 
 
 echo "$(date) waiting for a screen to be connected..."
