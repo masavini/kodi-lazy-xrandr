@@ -12,16 +12,13 @@ run `xrandr` to enable video output with the screen default resolution.
 
 ## Install
 
-Clone this repo somewhere in your `/storage` dir, then run the installer:
+Download `libreELEC-lazy-xrandr.sh` somewhere in your `/storage` dir, then add
+it to `/storage/.config/autostart.sh` (create it if not existing):
 
 ```
 cd /storage
-git clone https://github.com/masavini/libreELEC-lazy-xrandr
-libreELEC-lazy-xrandr/./install.sh
-```
-
-`install.sh` will add the following line to `/storage/.config/autostart.sh` script (and will create it if not existing):
-
-```
-( /path/to/repo/./libreELEC-lazy-xrandr.sh ) &
+wget 'https://raw.githubusercontent.com/masavini/libreELEC-lazy-xrandr/master/libreELEC-lazy-xrandr.sh'
+chmod +x libreELEC-lazy-xrandr.sh
+echo "( /storage/./libreELEC-lazy-xrandr.sh ) &" >> /storage/.config/autostart.sh
+chmod +x /storage/.config/autostart.sh
 ```
