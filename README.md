@@ -20,7 +20,7 @@ git clone https://github.com/masavini/libreELEC-lazy-xrandr
 libreELEC-lazy-xrandr/./install.sh
 ```
 
-The installer will add the following line to `/storage/.config/autostart.sh` script (and will create it if not existing):
+`install.sh` will add the following line to `/storage/.config/autostart.sh` script (and will create it if not existing):
 
 ```
 ( /path/to/repo/./libreELEC-lazy-xrandr.sh ) &
