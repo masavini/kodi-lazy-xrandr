@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-set -e
-
 export DISPLAY=':0.0'
 
 # if a screen is already connected, just exit.
