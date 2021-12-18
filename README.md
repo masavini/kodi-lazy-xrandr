@@ -19,6 +19,6 @@ it to `/storage/.config/autostart.sh` (create it if not existing):
 cd /storage
 wget 'https://raw.githubusercontent.com/masavini/libreELEC-lazy-xrandr/master/libreELEC-lazy-xrandr.sh'
 chmod +x libreELEC-lazy-xrandr.sh
-echo "( /storage/./libreELEC-lazy-xrandr.sh ) &" >> /storage/.config/autostart.sh
+echo "( /storage/./libreELEC-lazy-xrandr.sh ) &> libreELEC-lazy-xrandr.log &" >> /storage/.config/autostart.sh
 chmod +x /storage/.config/autostart.sh
 ```

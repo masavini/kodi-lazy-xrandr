@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+set -e
+
 export DISPLAY=':0.0'
 
 # if a screen is already connected, just exit.
@@ -7,7 +9,7 @@ xrandr -q | grep -q '\.[0-9]\+\*'
 [[ $? = 0 ]] && exit 0
 
 
-echo 'waiting for a screen to be connected...'
+echo "$(date) waiting for a screen to be connected..."
 connected_screen=''
 while [[ -z "${connected_screen}" ]]; do
 
@@ -17,7 +19,7 @@ while [[ -z "${connected_screen}" ]]; do
     # HDMI1
 
 done
-echo "${connected_screen} connected"
+echo "$(date) ${connected_screen} connected"
 
 
 screen_default_mode="$(
@@ -26,6 +28,7 @@ screen_default_mode="$(
         | awk '/\+ /{print $1}'
 )"
 # 1920x1080
-echo "${connected_screen} default mode: ${screen_default_mode}"
+echo "$(date) ${connected_screen} default mode: ${screen_default_mode}"
+
 
 xrandr --output "${connected_screen}" --mode "${screen_default_mode}"
